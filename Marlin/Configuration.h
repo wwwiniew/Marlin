@@ -521,13 +521,13 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  11.50,  11.50 }
-    #define DEFAULT_Ki_LIST {   0.50,   0.50 }
-    #define DEFAULT_Kd_LIST {  60.00,  60.00 }
+    #define DEFAULT_Kp_LIST {  40.51,  40.51 }
+    #define DEFAULT_Ki_LIST {   6.59,   6.59 }
+    #define DEFAULT_Kd_LIST {  62.22,  62.2 }
   #else
-    #define DEFAULT_Kp  11.50
-    #define DEFAULT_Ki   0.50
-    #define DEFAULT_Kd  60.00
+    #define DEFAULT_Kp  40.51
+    #define DEFAULT_Ki   6.59
+    #define DEFAULT_Kd  62.22
   #endif
 #endif // PIDTEMP
 
@@ -569,9 +569,9 @@
   //#define DEFAULT_bedKp 250.0
   //#define DEFAULT_bedKi 18.0
   //#define DEFAULT_bedKd 950.0
-	#define DEFAULT_bedKp 10.0    
-    #define DEFAULT_bedKi .023         
-    #define DEFAULT_bedKd 305.4
+	#define DEFAULT_bedKp 120.08    
+    #define DEFAULT_bedKi 11.02         
+    #define DEFAULT_bedKd 872.21
     
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -733,7 +733,7 @@
 #define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define Z_MIN_PROBE_ENDSTOP_INVERTING true  // Set to true to invert the logic of the probe.
 
 /**
@@ -1071,7 +1071,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 0
+#define PROBING_MARGIN 20
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (125*60)
@@ -1135,12 +1135,12 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE    3 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  3 // Z Clearance between probe points
+#define Z_CLEARANCE_DEPLOY_PROBE    5 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           3 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -10 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
